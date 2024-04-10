@@ -1,0 +1,49 @@
+@url = http://localhost:3000
+
+#############################################################
+### PRODUCTS
+#############################################################
+###
+GET {{url}}/products HTTP/1.1
+###
+GET {{url}}/products/22 HTTP/1.1
+
+###
+GET {{url}}/products/filter HTTP/1.1
+
+###
+POST {{url}}/products HTTP/1.1
+content-type: application/json
+
+{
+  "id": 4,
+  "name": "Product 4",
+  "description": "Description 4",
+  "price": 100,
+  "stock": 10,
+  "image": "https://i.imgur.com/5x1O2M2.jpg",
+  "brand": "Brand 4"
+}
+
+###
+PUT {{url}}/products/2000 HTTP/1.1
+content-type: application/json
+
+{
+  "price": 200
+}
+
+###
+DELETE {{url}}/products/1231 HTTP/1.1
+
+
+#############################################################
+### CATEGORY
+#############################################################
+###
+GET {{url}}/categories/2 HTTP/1.1
+GET {{url}}/categories/2/products/2 HTTP/1.1
+###
+GET {{url}}/products?limit=100&offset=100&brand=xyz HTTP/1.1=
+
+
