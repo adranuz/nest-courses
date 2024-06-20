@@ -6,7 +6,7 @@
 ###
 GET {{url}}/products HTTP/1.1
 ###
-GET {{url}}/products/22 HTTP/1.1
+GET {{url}}/products/2 HTTP/1.1
 
 ###
 GET {{url}}/products/filter HTTP/1.1

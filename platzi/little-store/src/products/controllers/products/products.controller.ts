@@ -12,16 +12,19 @@ import {
   // Res
   ParseIntPipe, // transforma el parametro string a un numero
 } from '@nestjs/common';
+import { ApiOperation, ApiTags } from '@nestjs/swagger';
 
 // import { Response } from 'express';
 import { ProductsService } from '../../services/products/products.service';
 import { CreateProductDto, UpdateProductDto } from '../../dtos/products.dto';
 
+@ApiTags('products')
 @Controller('products')
 export class ProductsController {
   constructor(private productService: ProductsService) {}
 
   @Get('filter')
+  @ApiOperation({ summary: 'List of filtered products' })
   getProductFilter() {
     return 'yo soy un Filter';
   }
